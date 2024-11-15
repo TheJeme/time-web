@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <section id="time-now-section">
+      <h2>Time Now</h2>
+      <p id="time-now"></p>
+    </section>
+    <section id="time-diff-section">
+      <h2>Time Diff</h2>
+      <div>
+        <label for="diff-start">Start:</label>
+        <input type="date" id="diff-start">
+      </div>
+      <div>
+        <label for="diff-end">End:</label>
+        <input type="date" id="diff-end">
+      </div>
+      <p id="time-diff"></p>
+    </section>
+    <section id="tiemzone-convert-section">
+      <h2>Time Zone Converter</h2>
+      <div>
+        <label for="timezone-start">Time:</label>
+        <input type="datetime-local" id="timezone-start">
+      </div>
+      <div>
+        <label for="timezone-from">From:</label>
+        <select id="timezone-from"></select>
+      </div>
+      <div>
+        <label for="timezone-to">To:</label>
+        <select id="timezone-to"></select>
+      </div>
+      <p id="timezone-end"></p>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+  <script ript src="scripts.js"></script>
+</body>
+
+</html>
