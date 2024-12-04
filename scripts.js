@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function calculateTimezoneDiff() {
-    const time = new Date(timezoneStart.value);
+    const time = timezoneStart.value;
     const fromZone = timezoneFrom.value;
     const toZone = timezoneTo.value;
 
     console.log(time, fromZone, toZone);
-    if (!isNaN(time) && fromZone && toZone) {
-      timezoneEnd.innerHTML = moment.tz(time, fromZone).tz(toZone).format('LLLL');
+    if (!isNaN(new Date(time)) && fromZone && toZone) {
+      timezoneEnd.innerHTML = moment.tz(time, "YYYY-MM-DDTHH:mm", fromZone).tz(toZone).format('LLLL');
     }
   }
 
