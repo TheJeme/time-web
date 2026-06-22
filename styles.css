@@ -28,6 +28,16 @@ section {
   margin: 20px 0;
 }
 
+section > div {
+  margin: 8px 0;
+}
+
+input,
+select {
+  font: inherit;
+  padding: 4px 6px;
+}
+
 header {
   background: #333;
   color: #fff;

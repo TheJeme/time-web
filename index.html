@@ -4,7 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Time</title>
+  <title>Time Tools</title>
+  <meta name="description" content="Check the current time, compare dates, convert time zones, and convert Unix timestamps.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#333333">
+  <link rel="canonical" href="https://time.jeme.app/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Time Tools">
+  <meta property="og:description" content="Check the current time, compare dates, convert time zones, and convert Unix timestamps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://time.jeme.app/">
+  <meta property="og:site_name" content="Time Tools">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Time Tools">
+  <meta name="twitter:description" content="Check the current time, compare dates, convert time zones, and convert Unix timestamps.">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -42,10 +56,22 @@
       </div>
       <p id="timezone-end"></p>
     </section>
+    <section id="epoch-convert-section">
+      <h2>Epoch Converter</h2>
+      <div>
+        <label for="epoch-seconds">Unix epoch:</label>
+        <input type="number" id="epoch-seconds" step="1">
+      </div>
+      <div>
+        <label for="epoch-datetime">Local date and time:</label>
+        <input type="datetime-local" id="epoch-datetime" step="1">
+      </div>
+      <p id="epoch-status" aria-live="polite"></p>
+    </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
-  <script ript src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>
