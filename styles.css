@@ -38,6 +38,44 @@ select {
   padding: 4px 6px;
 }
 
+.date-picker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.current-time {
+  margin: 12px 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.date-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  width: min(800px, 100%);
+  margin: 0 auto;
+}
+
+.date-details > div {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.date-details dt {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.date-details dd {
+  font-weight: bold;
+}
+
 header {
   background: #333;
   color: #fff;

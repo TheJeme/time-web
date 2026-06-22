@@ -25,8 +25,34 @@
 <body>
   <main>
     <section id="time-now-section">
-      <h2>Time Now</h2>
-      <p id="time-now"></p>
+      <h2>Date &amp; Time</h2>
+      <div class="date-picker-row">
+        <label for="date-now">Select date:</label>
+        <input type="date" id="date-now">
+      </div>
+      <p id="time-now" class="current-time" aria-live="off"></p>
+      <dl class="date-details" aria-live="polite">
+        <div>
+          <dt>Date</dt>
+          <dd id="date-formatted"></dd>
+        </div>
+        <div>
+          <dt>Week</dt>
+          <dd id="date-week"></dd>
+        </div>
+        <div>
+          <dt>Day of year</dt>
+          <dd id="date-day-of-year"></dd>
+        </div>
+        <div>
+          <dt>Quarter</dt>
+          <dd id="date-quarter"></dd>
+        </div>
+        <div>
+          <dt>Year remaining</dt>
+          <dd id="date-remaining"></dd>
+        </div>
+      </dl>
     </section>
     <section id="time-diff-section">
       <h2>Time Diff</h2>

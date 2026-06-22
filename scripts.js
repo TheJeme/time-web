@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const timeNow = document.getElementById('time-now');
+  const dateNow = document.getElementById('date-now');
+  const dateFormatted = document.getElementById('date-formatted');
+  const dateWeek = document.getElementById('date-week');
+  const dateDayOfYear = document.getElementById('date-day-of-year');
+  const dateQuarter = document.getElementById('date-quarter');
+  const dateRemaining = document.getElementById('date-remaining');
   const startInput = document.getElementById('diff-start');
   const endInput = document.getElementById('diff-end');
   const timeDiff = document.getElementById('time-diff');
@@ -12,7 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const timezoneTo = document.getElementById('timezone-to');
 
   function updateTime() {
-    timeNow.innerHTML = moment().format('LLLL');
+    timeNow.textContent = `Local time: ${moment().format('LTS')}`;
+  }
+
+  function updateDateDetails() {
+    const selectedDate = dateNow.value
+      ? moment(dateNow.value, 'YYYY-MM-DD', true)
+      : moment();
+
+    const dayOfYear = selectedDate.dayOfYear();
+    const daysInYear = selectedDate.isLeapYear() ? 366 : 365;
+    const daysRemaining = daysInYear - dayOfYear;
+
+    dateFormatted.textContent = selectedDate.format('dddd, MMMM D, YYYY');
+    dateWeek.textContent = `${selectedDate.isoWeek()} of ${selectedDate.isoWeeksInYear()}`;
+    dateDayOfYear.textContent = `${dayOfYear} / ${daysInYear}`;
+    dateQuarter.textContent = `Q${selectedDate.quarter()}`;
+    dateRemaining.textContent = `${daysRemaining} ${daysRemaining === 1 ? 'day' : 'days'}`;
   }
 
   function calculateDateDiff() {
@@ -90,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(updateTime, 250);
   updateTime();
+  updateDateDetails();
   populateTimezones();
   initializeEpochConverter();
 
@@ -100,4 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
   timezoneStart.addEventListener('change', calculateTimezoneDiff);
   timezoneFrom.addEventListener('change', calculateTimezoneDiff);
   timezoneTo.addEventListener('change', calculateTimezoneDiff);
+  dateNow.addEventListener('change', updateDateDetails);
 });
